@@ -20,6 +20,12 @@ public class UsuarioController {
     public List<Usuario> getAll(@RequestParam(required = false) String nome) {
         return usuarioService.getAll(nome);
     }
+    
+    @PostMapping("/{user_id}")
+    @ResponseStatus(code = HttpStatus.OK)
+    public void createAccount(@PathVariable(value = "user_id") Integer id, @RequestBody UsuarioRequest usuarioRequest) {
+        return usuarioService.createNewAccount(usuarioRequest, id);
+    }
 
     @PostMapping
     public UsuarioResponse create(@RequestBody UsuarioRequest usuarioRequest) {
