@@ -12,4 +12,5 @@ public interface UsuarioService {
     Usuario getById(Integer id);
     Usuario update(UsuarioRequest usuarioRequest, Integer id);
     void delete(Integer id);
+    void createNewAccount (AccountRequest accountRequest, Integer id);
 }
